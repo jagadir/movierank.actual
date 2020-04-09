@@ -35,5 +35,11 @@ namespace MovieRank.Api.Services
             var items = await _repository.GetUsersRankedMoviesByMovieTitle(userId, movieName);
             return _mapper.ToMovieContracts(items);
         }
+
+        public async Task AddMovie(int userId, MovieRankRequest movieRankRequest)
+        {
+            var movieDb = _mapper.ToMovieDbModel(userId, movieRankRequest);
+            await _repository.AddMovie(movieDb);
+        }
     }
 }

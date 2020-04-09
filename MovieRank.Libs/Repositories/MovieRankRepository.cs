@@ -38,5 +38,10 @@ namespace MovieRank.Libs.Repositories
             };
         return await _context.QueryAsync<MovieDb>(userId, queryConfig).GetRemainingAsync();
         }
+
+        public async Task AddMovie(MovieDb movie)
+        {
+            await _context.SaveAsync(movie);
+        }
     }
 }

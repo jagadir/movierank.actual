@@ -41,5 +41,12 @@ namespace MovieRank.Api.Controllers
             var results = await _service.GetUsersRankedMoviesByMovieTitle(userId, movieName);
             return results;
         }
+
+        [HttpPost]
+        [Route("{userId}")]
+        public async Task<IActionResult> AddMovie(int userid, [FromBody] MovieRankRequest movieRankRequest){
+            await _service.AddMovie(userid, movieRankRequest);
+            return Ok();
+        }
     }
 }
