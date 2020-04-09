@@ -41,5 +41,15 @@ namespace MovieRank.Api.Services
             var movieDb = _mapper.ToMovieDbModel(userId, movieRankRequest);
             await _repository.AddMovie(movieDb);
         }
+
+        public async Task UpdateMovie(int userId, MovieUpdateRequest updateRequest)
+        {
+            var movieDb = await _repository.GetMovie(userId, updateRequest.MovieName);
+            if(movieDb != null)
+            {
+                var movieToBeUpdated= _mapper.ToMovieDbModel(userId, movieDb, updateRequest);
+               await _repository.UpdateMovie(movieToBeUpdated);  
+            }
+        }
     }
 }

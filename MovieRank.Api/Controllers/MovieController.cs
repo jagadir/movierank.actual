@@ -48,5 +48,12 @@ namespace MovieRank.Api.Controllers
             await _service.AddMovie(userid, movieRankRequest);
             return Ok();
         }
+
+        [HttpPut]
+        [Route("{userId}")]
+        public async Task<IActionResult> UpdateMovie(int userId, [FromBody] MovieUpdateRequest updateRequest){
+            await _service.UpdateMovie(userId, updateRequest);
+            return Ok();
+        }
     }
 }

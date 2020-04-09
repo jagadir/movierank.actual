@@ -16,6 +16,7 @@ namespace MovieRank.Libs.Mappers
         public MovieResponse ToMovieContract(MovieDb item)
         {
             return new MovieResponse {
+                UserId = item.UserId,
                 MovieName = item.MovieName,
                 Description = item.Description,
                 Actors = item.Actors,
@@ -32,6 +33,18 @@ namespace MovieRank.Libs.Mappers
                Description = movieRankRequest.Description,
                Actors = movieRankRequest.Actors,
                Ranking = movieRankRequest.Ranking,
+               RankedDateTime = DateTime.UtcNow.ToString()
+           };
+        }
+
+         public MovieDb ToMovieDbModel(int userId, MovieDb movie, MovieUpdateRequest movieUpdateRequest)
+        {
+           return new MovieDb {
+               UserId = userId,
+               MovieName = movie.MovieName,
+               Description = movie.Description,
+               Actors = movie.Actors,
+               Ranking = movieUpdateRequest.Ranking,
                RankedDateTime = DateTime.UtcNow.ToString()
            };
         }
