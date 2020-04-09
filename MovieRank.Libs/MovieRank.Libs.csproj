@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.105.26" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.101" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieRank.Contracts\MovieRank.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
