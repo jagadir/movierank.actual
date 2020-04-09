@@ -8,7 +8,7 @@ namespace MovieRank.Libs.Mappers
 {
     public interface IMapper
     {
-        IEnumerable<MovieResponse> ToMovieContract(IEnumerable<MovieDb> items);
+        IEnumerable<MovieResponse> ToMovieContracts(IEnumerable<MovieDb> items);
         MovieResponse ToMovieContract(MovieDb item);
     }
 }
