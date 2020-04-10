@@ -51,5 +51,12 @@ namespace MovieRank.Api.Services
                await _repository.UpdateMovie(movieToBeUpdated);  
             }
         }
+
+        public async Task<MovieRankResponse> GetMovieRank(string movieName)
+        {
+            var result =await _repository.GetMovieRanks(movieName);
+            var overallMovieRanking = Math.Round(result.Select(m=> m.Ranking).Average());
+            return _mapper.ToMovieRankResponse(movieName, overallMovieRanking);
+        }
     }
 }

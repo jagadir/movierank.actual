@@ -14,5 +14,7 @@ namespace MovieRank.Api.Services
 
         Task AddMovie(int userId, MovieRankRequest movieRankRequest);
         Task UpdateMovie(int userId, MovieUpdateRequest updateRequest);
+
+        Task<MovieRankResponse> GetMovieRank(string movieName);
     }
 }

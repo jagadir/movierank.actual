@@ -48,5 +48,13 @@ namespace MovieRank.Libs.Mappers
                RankedDateTime = DateTime.UtcNow.ToString()
            };
         }
+
+        public MovieRankResponse ToMovieRankResponse(string movieName, double overallRanking)
+        {
+            return new MovieRankResponse{
+                MovieName = movieName,
+                OverallRanking = overallRanking
+            };
+        }
     }
 }

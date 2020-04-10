@@ -12,5 +12,6 @@ namespace MovieRank.Libs.Mappers
         MovieResponse ToMovieContract(MovieDb item);
         MovieDb ToMovieDbModel(int userId, MovieRankRequest movieRankRequest);
         MovieDb ToMovieDbModel(int userId,MovieDb movie, MovieUpdateRequest movieUpdateRequest);
+        MovieRankResponse ToMovieRankResponse(string movieName, double overallMovieRanking);
     }
 }

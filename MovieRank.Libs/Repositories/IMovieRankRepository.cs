@@ -12,5 +12,7 @@ namespace MovieRank.Libs.Repositories
 
         Task AddMovie(MovieDb movie);
         Task UpdateMovie(MovieDb movie);
+
+        Task<IEnumerable<MovieDb>> GetMovieRanks(string movieName);
     }
 }
